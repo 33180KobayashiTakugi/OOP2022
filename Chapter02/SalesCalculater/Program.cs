@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 namespace SalesCalculator {
     class Program {
         static void Main(string[] args) {
+            var number = 8L;
+
             var sales = new SalesCounter("sales.csv");
             var amountPerStore = sales.GetPerStoreSales();
             foreach (var obj in amountPerStore) {
