@@ -11,6 +11,8 @@ namespace Exercise01 {
 
             var check = ym.Is21Century;
             var test = ym.AddOneMonth();
+
+            Console.WriteLine(ym);//WriteLineはToStringを書かなくても呼ばれる
         }
     }
 }
