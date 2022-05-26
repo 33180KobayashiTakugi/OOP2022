@@ -34,10 +34,12 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_6(YearMonth[] ymCollection) {
-            foreach (var ym in ymCollection.OrderByDescending(ym => ym.Year)) {
+            //①月で昇順に出力　②偶数年のみ昇順に出力 ③閏年のみを出力　④すべての年から12月に一番近い月   
+            foreach (var ym in ymCollection.Where(ym => DateTime.IsLeapYear(ym.Year))) {
                 Console.WriteLine(ym);
             }
-           
+            var data = ymCollection.Max(ym => ym.Month);
+            Console.WriteLine(data);
         }
 
         //4.2.3
