@@ -33,11 +33,9 @@ namespace Exercise01 {
 
         private static void Exercise1_2(int[] numbers) {
 
-            for (int i = numbers.Length - 2; i < numbers.Length; i++) {
-
-                Console.WriteLine(numbers[i]); 
-            }
-           
+            foreach (var n in numbers.Skip(numbers.Length -2)) {
+                Console.WriteLine(n);
+            }            
         }
 
         private static void Exercise1_3(int[] numbers) {
