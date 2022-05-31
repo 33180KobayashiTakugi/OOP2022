@@ -23,4 +23,3 @@ namespace Exercise02 {
             }
         }
     }
-}
