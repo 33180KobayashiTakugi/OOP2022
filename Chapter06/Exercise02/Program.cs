@@ -45,9 +45,7 @@ namespace Exercise02 {
             #endregion
         }
 
-        private static void Exercise2_8(List<Book> books) {
-
-        }
+        
 
         private static void Exercise2_1(List<Book> books) {
             //booksから価格とページ数だけのオブジェクトを新たに作成したい場合
@@ -93,6 +91,13 @@ namespace Exercise02 {
             foreach (var book in selected)
                 Console.WriteLine(book.Title);
         }
+        private static void Exercise2_8(List<Book> books) {
+
+            foreach (var item in books.Select((b, i) => new{ i,b.Title }))
+                Console.WriteLine((item.i + 1) + "冊目:" + item.Title);
+            } 
+
+        }
     }
 
     class Book {
@@ -101,4 +106,3 @@ namespace Exercise02 {
         public int Pages { get; set; }
     }
 
-}
