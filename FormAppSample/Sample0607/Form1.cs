@@ -14,31 +14,21 @@ namespace Sample0607 {
             InitializeComponent();
         }
 
-        private void label4_Click(object sender, EventArgs e) {
+        private void btRandom_Click(object sender, EventArgs e) {
+
+           var r = new Random();
+            Number.Value = r.Next(minValue: (int)Min.Value, (int)Max.Value+1);
+        }
+
+        private void Number_ValueChanged(object sender, EventArgs e) {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e) {
 
         }
 
-        private void tbNum1_TextChanged(object sender, EventArgs e) {
-
-       }
-
-        private void button1_Click(object sender, EventArgs e) {
-
-            if (int.Parse(nudNum2.Text) != 0) {
-                nudAns.Value = nudNum1.Value / nudNum2.Value;
-                nudMod.Value = nudNum1.Value % nudNum2.Value;
-            }
-            else {
-                MessageBox.Show("0で割り算できません",
-                "エラー",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                    }
-            
+        private void Form1_Load(object sender, EventArgs e) {
 
         }
     }

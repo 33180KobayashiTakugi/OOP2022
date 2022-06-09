@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample0603", "FormAppSample
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample0607", "FormAppSample\Sample0607\Sample0607.csproj", "{9B4AD7D2-1B6B-4B8B-97E3-D4AC96425529}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGame", "FormAppSample\NumberGame\NumberGame.csproj", "{462FB0D4-5F3B-4F24-B01A-7F7E89CDDEB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{9B4AD7D2-1B6B-4B8B-97E3-D4AC96425529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B4AD7D2-1B6B-4B8B-97E3-D4AC96425529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B4AD7D2-1B6B-4B8B-97E3-D4AC96425529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462FB0D4-5F3B-4F24-B01A-7F7E89CDDEB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462FB0D4-5F3B-4F24-B01A-7F7E89CDDEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462FB0D4-5F3B-4F24-B01A-7F7E89CDDEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462FB0D4-5F3B-4F24-B01A-7F7E89CDDEB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{8F454F96-BBA6-4222-9817-A60D278F4650} = {03105A83-BF7D-4FD1-8B74-EEFA5A4AA6EC}
 		{6AB17246-2757-408F-8DA5-7162F0622B3B} = {B0F31664-D0E9-4D56-87E1-8C6300979ADC}
 		{9B4AD7D2-1B6B-4B8B-97E3-D4AC96425529} = {B0F31664-D0E9-4D56-87E1-8C6300979ADC}
+		{462FB0D4-5F3B-4F24-B01A-7F7E89CDDEB7} = {B0F31664-D0E9-4D56-87E1-8C6300979ADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8C099CC1-E39C-48F1-B36F-8BFE3E0AF126}
