@@ -37,7 +37,7 @@ namespace AddressBook {
             this.cbfamily = new System.Windows.Forms.CheckBox();
             this.cbFriend = new System.Windows.Forms.CheckBox();
             this.cbWork = new System.Windows.Forms.CheckBox();
-            this.cbothers = new System.Windows.Forms.CheckBox();
+            this.cbOther = new System.Windows.Forms.CheckBox();
             this.btAddPerson = new System.Windows.Forms.Button();
             this.pbPicture = new System.Windows.Forms.PictureBox();
             this.btPictureOpen = new System.Windows.Forms.Button();
@@ -101,10 +101,13 @@ namespace AddressBook {
             // 
             this.dgvPersons.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersons.Location = new System.Drawing.Point(12, 325);
+            this.dgvPersons.MultiSelect = false;
             this.dgvPersons.Name = "dgvPersons";
             this.dgvPersons.RowTemplate.Height = 21;
+            this.dgvPersons.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPersons.Size = new System.Drawing.Size(776, 225);
             this.dgvPersons.TabIndex = 1;
+            this.dgvPersons.Click += new System.EventHandler(this.dgvPersons_Click);
             // 
             // tbName
             // 
@@ -169,15 +172,15 @@ namespace AddressBook {
             this.cbWork.Text = "仕事";
             this.cbWork.UseVisualStyleBackColor = true;
             // 
-            // cbothers
+            // cbOther
             // 
-            this.cbothers.AutoSize = true;
-            this.cbothers.Location = new System.Drawing.Point(461, 289);
-            this.cbothers.Name = "cbothers";
-            this.cbothers.Size = new System.Drawing.Size(55, 16);
-            this.cbothers.TabIndex = 4;
-            this.cbothers.Text = "その他";
-            this.cbothers.UseVisualStyleBackColor = true;
+            this.cbOther.AutoSize = true;
+            this.cbOther.Location = new System.Drawing.Point(461, 289);
+            this.cbOther.Name = "cbOther";
+            this.cbOther.Size = new System.Drawing.Size(55, 16);
+            this.cbOther.TabIndex = 4;
+            this.cbOther.Text = "その他";
+            this.cbOther.UseVisualStyleBackColor = true;
             // 
             // btAddPerson
             // 
@@ -232,7 +235,7 @@ namespace AddressBook {
             this.Controls.Add(this.btPictureOpen);
             this.Controls.Add(this.pbPicture);
             this.Controls.Add(this.btAddPerson);
-            this.Controls.Add(this.cbothers);
+            this.Controls.Add(this.cbOther);
             this.Controls.Add(this.cbWork);
             this.Controls.Add(this.cbFriend);
             this.Controls.Add(this.cbfamily);
@@ -270,7 +273,7 @@ namespace AddressBook {
         private System.Windows.Forms.CheckBox cbfamily;
         private System.Windows.Forms.CheckBox cbFriend;
         private System.Windows.Forms.CheckBox cbWork;
-        private System.Windows.Forms.CheckBox cbothers;
+        private System.Windows.Forms.CheckBox cbOther;
         private System.Windows.Forms.Button btAddPerson;
         private System.Windows.Forms.PictureBox pbPicture;
         private System.Windows.Forms.Button btPictureOpen;
