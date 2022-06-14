@@ -64,7 +64,7 @@ namespace AddressBook {
         //データグリッドビューをクリックしたときのイベントハンドラ
         private void dgvPersons_Click(object sender, EventArgs e) {
 
-
+            if (dgvPersons.CurrentRow == null) return;
             var selectrow = dgvPersons.CurrentRow.Index;
             //データグリッドビューのインデックス０番の名前をテキストボックスに格納
             tbName.Text = listPerson[selectrow].Name;
@@ -94,10 +94,42 @@ namespace AddressBook {
                 }
             }
         }
-
+        //グループのチェックボックスをクリア
         private void GroupCheckBoxAllClear() {
+
             cbfamily.Checked = cbFriend.Checked = cbWork.Checked = cbOther.Checked = false;
         }
+        //更新ボタンが押された時の処理
+        private void btUpdate_Click(object sender, EventArgs e) {
+
+            listPerson[dgvPersons.CurrentRow.Index].Name = tbName.Text;
+            listPerson[dgvPersons.CurrentRow.Index].MailAddress = tbMailaddress.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Address = tbAddress.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Company = tbCompany.Text;
+            listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
+            listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
+            dgvPersons.Refresh();//データグリッドビュー更新
+        }
+        //削除ボタンが押された時の処理
+        private void btDelete_Click(object sender, EventArgs e) {
+
+            listPerson.RemoveAt(dgvPersons.CurrentRow.Index);
+            if (listPerson.Count() == 0) {
+
+                btDelete.Enabled = false;
+                btUpdate.Enabled = false;
+            }
+
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+            btDelete.Enabled = false;  //削除ボタンをマスク
+            btUpdate.Enabled = false;  //更新ボタン
+        }
+
+        
     }
 }
 
