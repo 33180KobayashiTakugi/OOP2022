@@ -26,16 +26,34 @@ namespace AddressBook {
         }
 
         private void btAddPerson_Click(object sender, EventArgs e) {
+            //氏名が未入力なら登録しない
+            if (String.IsNullOrWhiteSpace(tbName.Text)) {
+                MessageBox.Show("氏名が入力されていません");
+                return;
+            }
 
             Person newPerson = new Person {
+
                 Name = tbName.Text,
                 MailAddress = tbMailaddress.Text,
                 Address = tbAddress.Text,
-                Company = tbCompany.Text,
+                Company = cbCompany.Text,
                 Picture = pbPicture.Image,
                 listGroup = GetCheckBoxGroup(),
             };
             listPerson.Add(newPerson);
+            dgvPersons.Rows[dgvPersons.RowCount - 1].Selected = true;
+
+            if (listPerson.Count() >0) {
+                btDelete.Enabled = true;
+                btUpdate.Enabled = true;
+            }
+            //コンボボックスに会社名を登録する(重複なし)
+            if (cbCompany.Items.Contains(cbCompany.Text)) {
+                //まだ登録されていなければ登録処理
+                cbCompany.Items.Add(cbCompany.Text);
+            }
+         
         }
 
         //チェックボックスにセットされている値をリストとして取り出す
@@ -70,7 +88,7 @@ namespace AddressBook {
             tbName.Text = listPerson[selectrow].Name;
             tbMailaddress.Text = listPerson[selectrow].MailAddress;
             tbAddress.Text = listPerson[selectrow].Address;
-            tbCompany.Text = listPerson[selectrow].Company;
+            cbCompany.Text = listPerson[selectrow].Company;
             pbPicture.Image = listPerson[selectrow].Picture;
 
             GroupCheckBoxAllClear();
@@ -105,7 +123,7 @@ namespace AddressBook {
             listPerson[dgvPersons.CurrentRow.Index].Name = tbName.Text;
             listPerson[dgvPersons.CurrentRow.Index].MailAddress = tbMailaddress.Text;
             listPerson[dgvPersons.CurrentRow.Index].Address = tbAddress.Text;
-            listPerson[dgvPersons.CurrentRow.Index].Company = tbCompany.Text;
+            listPerson[dgvPersons.CurrentRow.Index].Company = cbCompany.Text;
             listPerson[dgvPersons.CurrentRow.Index].listGroup = GetCheckBoxGroup();
             listPerson[dgvPersons.CurrentRow.Index].Picture = pbPicture.Image;
             dgvPersons.Refresh();//データグリッドビュー更新
@@ -129,7 +147,7 @@ namespace AddressBook {
             btUpdate.Enabled = false;  //更新ボタン
         }
 
-        
+       
     }
 }
 
