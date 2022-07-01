@@ -37,7 +37,6 @@ namespace RssReader {
             this.cbRssURL.Name = "cbRssURL";
             this.cbRssURL.Size = new System.Drawing.Size(657, 20);
             this.cbRssURL.TabIndex = 0;
-            
             // 
             // cbRssGet
             // 
@@ -57,12 +56,14 @@ namespace RssReader {
             this.lbRssTitle.Name = "lbRssTitle";
             this.lbRssTitle.Size = new System.Drawing.Size(164, 556);
             this.lbRssTitle.TabIndex = 2;
+            this.lbRssTitle.Click += new System.EventHandler(this.lbRssTitle_Click);
             // 
             // wbBrowser
             // 
             this.wbBrowser.Location = new System.Drawing.Point(182, 55);
             this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.wbBrowser.Name = "wbBrowser";
+            this.wbBrowser.ScriptErrorsSuppressed = true;
             this.wbBrowser.Size = new System.Drawing.Size(606, 556);
             this.wbBrowser.TabIndex = 3;
             // 

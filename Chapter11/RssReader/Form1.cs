@@ -13,6 +13,9 @@ using System.Net;
 
 namespace RssReader {
     public partial class Form1 : Form {
+
+        IEnumerable<string> xTitle;
+
         public Form1() {
             InitializeComponent();
         }
@@ -25,11 +28,18 @@ namespace RssReader {
                 var xdoc = XDocument.Load(stream);
                 var xNews = xdoc.Root.Descendants("title");
 
+                var xTitle = xdoc.Root.Descendants("item").Select(x => (string)x.Element("title"));
+
                 foreach (var data in xNews) {
 
                     lbRssTitle.Items.Add(data);
                 }
             }
+        }
+
+        private void lbRssTitle_Click(object sender, EventArgs e) {
+
+           int index = lbRssTitle.SelectedIndex; //選択した箇所のインデックスを取得
         }
     }
 }
