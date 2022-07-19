@@ -70,7 +70,7 @@ namespace AddressBook {
         //コンボボックスに会社名を登録する(重複なし)
         private void setcbCompany(string company) {
           
-            if (cbCompany.Items.Contains(company)) {
+            if (!cbCompany.Items.Contains(company)) {
                 //まだ登録されていなければ登録処理
                 cbCompany.Items.Add(company);
             }
