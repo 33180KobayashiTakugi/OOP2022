@@ -223,7 +223,7 @@ namespace CarReportSystem {
 
             if (cdColorSelect.ShowDialog() == DialogResult.OK) {
                 BackColor = cdColorSelect.Color;
-                settings.MainFormColor = cdColorSelect.Color;
+                settings.MainFormColor = cdColorSelect.Color.ToArgb();
             }
         }
 
@@ -240,9 +240,9 @@ namespace CarReportSystem {
             
                 using (var reader = XmlReader.Create("settings.xml")) {
                     var serializer = new XmlSerializer(typeof(Settings));
-                settings = serializer.Deserialize(reader) as Settings; 
-
-                }
+                settings = serializer.Deserialize(reader) as Settings;
+                BackColor = Color.FromArgb(settings.MainFormColor) ;
+            }
             EnabledCheck(); //マスク処理呼び出し
         }
            
