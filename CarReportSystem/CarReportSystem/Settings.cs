@@ -10,6 +10,19 @@ namespace CarReportSystem {
     //設定情報
     public class Settings {
 
-       public int MainFormColor { get; set; }
+        private static Settings settings;
+
+        //コンストラクタ
+        private Settings() {
+            
+        }
+
+        public static Settings getInstance() {
+            if (settings == null) {
+                settings = new Settings();
+            }
+            return settings;
+        }
+        public int MainFormColor { get; set; }
     }
 }
