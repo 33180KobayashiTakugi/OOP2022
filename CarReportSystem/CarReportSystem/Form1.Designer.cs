@@ -171,6 +171,7 @@ namespace CarReportSystem {
             // 
             // pbPicture
             // 
+            this.pbPicture.BackColor = System.Drawing.SystemColors.ControlDark;
             this.pbPicture.Location = new System.Drawing.Point(539, 71);
             this.pbPicture.Name = "pbPicture";
             this.pbPicture.Size = new System.Drawing.Size(221, 217);
@@ -362,31 +363,31 @@ namespace CarReportSystem {
             // 設定toolStripMenuItem1
             // 
             this.設定toolStripMenuItem1.Name = "設定toolStripMenuItem1";
-            this.設定toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.設定toolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
             this.設定toolStripMenuItem1.Text = "色設定";
             this.設定toolStripMenuItem1.Click += new System.EventHandler(this.設定toolStripMenuItem1_Click);
             // 
             // 開くToolStripMenuItem
             // 
             this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
-            this.開くToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.開くToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.開くToolStripMenuItem.Text = "開く";
             // 
             // 保存ToolStripMenuItem
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.保存ToolStripMenuItem.Text = "保存";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(107, 6);
             // 
             // 終了ToolStripMenuItem
             // 
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.終了ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.終了ToolStripMenuItem.Text = "終了";
             // 
             // Form1
