@@ -46,17 +46,38 @@ namespace Chapter15 {
             }
 
 
-
-            var groups = Library.Books
-                                 .Where(b => years.Contains(b.PublishedYear)).GroupBy(b => b.PublishedYear)
-                                 .OrderBy(g => g.Key);
-            foreach (var g in groups) {
-                Console.WriteLine("");
-                Console.WriteLine($"{g.Key}年");
-                foreach (var book in g) {
-                    Console.WriteLine($" {book}");
-                }
+            Console.WriteLine();
+            //var groups = Library.Books
+            //                     .Where(b => years.Contains(b.PublishedYear)).GroupBy(b => b.PublishedYear)
+            //                     .OrderBy(g => g.Key);
+            //foreach (var g in groups) {
+            //    Console.WriteLine("");
+            //    Console.WriteLine($"{g.Key}年");
+            //    foreach (var book in g) {
+            //        Console.WriteLine($" {book}");
+            //    }
+            //}
+            var selected = Library.Books
+                                 .Where(b => years.Contains(b.PublishedYear))
+                                 .Join(Library.Categories,      //結合する2番目のシーケンス
+                                       book => book.CategoryId, //対象シーケンスの結合キー
+                                       category => category.Id, //2番目のシーケンスの結合キー
+                                       (book,category) => new {
+                                           Title = book.Title,
+                                           Category = category.Name,
+                                           PublishedYear = book.PublishedYear,
+                                           price = book.Price,
+                                       });
+            foreach (var book in selected
+                                 .OrderByDescending(x=>x.PublishedYear)
+                                 .ThenBy(x=>x.Category))
+                {
+                //Console.WriteLine($" {book.PublishedYear}年 ");
+                //var category = Library.Categories.Where(b => b.Id == book.CategoryId).First();
+                Console.WriteLine($" タイトル:{book.Title},出版年:{book.PublishedYear},カテゴリ:{book.Category},{book.price} 円");
             }
+            Console.WriteLine($"金額の合計{selected.Sum(b => b.price)}円");
         }
     }
 }
+
