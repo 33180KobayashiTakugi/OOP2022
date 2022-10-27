@@ -5,18 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CollarChecker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="800">
-    
+        Title="MainWindow" Height="300" Width="700" FontSize="15" FontFamily="Segoe UI Light" Loaded="Window_Loaded">
+
     <StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="250"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Column="1">
+
+            <Label Name="colorArea" Grid.Row="0" Grid.Column="0" Background="AliceBlue" Margin="20"/>
+            <Grid Grid.Column="1" Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -26,11 +29,49 @@
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+
                 </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="R" Margin="3,20,3,3" HorizontalAlignment="Right"/>
+                <Slider x:Name="rSlider" Grid.Row="0" Grid.Column="1" Margin="3,20,3,3" ValueChanged="Slider_ValueChanged"/>
+                <TextBox x:Name="rValue" Grid.Row="0" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=rSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="G" Margin="3,20,3,3" HorizontalAlignment="Right"/>
+                <Slider x:Name="gSlider" Grid.Row="1" Grid.Column="1" Margin="3,20,3,3" ValueChanged="Slider_ValueChanged"/>
+                <TextBox x:Name="gValue" Grid.Row="1" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=gSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="B" Margin="3,20,3,3" HorizontalAlignment="Right"/>
+                <Slider x:Name="bSlider" Grid.Row="2" Grid.Column="1" Margin="3,20,3,3" ValueChanged="Slider_ValueChanged"/>
+                <TextBox x:Name="bValue" Grid.Row="2" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=bSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+
+                <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="49,10,0,0" Height="24" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="3" Grid.Row="3" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="20" Height="Auto" Margin="5,0" BorderThickness="1" BorderBrush="Black" Loaded="Border_Loaded"  >
+                                    <Border.Background>
+                                        <SolidColorBrush Color="{Binding Color}"/>
+                                    </Border.Background>
+                                </Border>
+                                <TextBlock Text="{Binding Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </Grid>
-                
+            <Grid Grid.Column="2" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,5" Click="stockButton_Click"/>
+                <ListBox x:Name="stockList" Grid.Row="1" Margin="10"/>
+
+            </Grid>
         </Grid>
         
     </StackPanel>
