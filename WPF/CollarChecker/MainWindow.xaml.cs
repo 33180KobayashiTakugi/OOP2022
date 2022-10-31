@@ -19,6 +19,9 @@ namespace CollarChecker {
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window {
+
+        MyColor myColor = new MyColor();
+
         //コンストラクタ
         public MainWindow() {
             InitializeComponent();
@@ -48,12 +51,12 @@ namespace CollarChecker {
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            var mycolor = (MyColor)((ComboBox)sender).SelectedItem;
+            var myColor = (MyColor)((ComboBox)sender).SelectedItem;
             //var color = mycolor.Color;
             //colorArea.Background = new SolidColorBrush(color);
-            gSlider.Value = mycolor.Color.G;
-            bSlider.Value = mycolor.Color.B;
-            rSlider.Value = mycolor.Color.R;
+            gSlider.Value = myColor.Color.G;
+            bSlider.Value = myColor.Color.B;
+            rSlider.Value = myColor.Color.R;
 
 
 
@@ -65,10 +68,14 @@ namespace CollarChecker {
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-
+            GetColor();
         }
 
         private void stockButton_Click(object sender, RoutedEventArgs e) {
+
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e) {
 
         }
     }

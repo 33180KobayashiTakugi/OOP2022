@@ -34,18 +34,18 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="R" Margin="3,20,3,3" HorizontalAlignment="Right"/>
-                <Slider x:Name="rSlider" Grid.Row="0" Grid.Column="1" Margin="3,20,3,3" ValueChanged="Slider_ValueChanged"/>
-                <TextBox x:Name="rValue" Grid.Row="0" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=rSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider x:Name="rSlider" Grid.Row="0" Grid.Column="1" Margin="3,20,3,3" TickPlacement="TopLeft" TickFrequency="50" Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
+                <TextBox x:Name="rValue" Grid.Row="0" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=rSlider,Path=Value,StringFormat={}{0:N0}}"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="G" Margin="3,20,3,3" HorizontalAlignment="Right"/>
-                <Slider x:Name="gSlider" Grid.Row="1" Grid.Column="1" Margin="3,20,3,3" ValueChanged="Slider_ValueChanged"/>
-                <TextBox x:Name="gValue" Grid.Row="1" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=gSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider x:Name="gSlider" Grid.Row="1" Grid.Column="1" Margin="3,20,3,3" TickPlacement="TopLeft" TickFrequency="50" Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
+                <TextBox x:Name="gValue" Grid.Row="1" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=gSlider,Path=Value,StringFormat={}{0:N0}}"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="B" Margin="3,20,3,3" HorizontalAlignment="Right"/>
-                <Slider x:Name="bSlider" Grid.Row="2" Grid.Column="1" Margin="3,20,3,3" ValueChanged="Slider_ValueChanged"/>
-                <TextBox x:Name="bValue" Grid.Row="2" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=bSlider,Path=Value,UpdateSourceTrigger=PropertyChanged}"/>
+                <Slider x:Name="bSlider" Grid.Row="2" Grid.Column="1" Margin="3,20,3,3" TickPlacement="TopLeft" TickFrequency="50" Minimum="0" Maximum="255" ValueChanged="Slider_ValueChanged"/>
+                <TextBox x:Name="bValue" Grid.Row="2" Grid.Column="2" Margin="3,20,3,3" Text="{Binding ElementName=bSlider,Path=Value,StringFormat={}{0:N0}}"/>
 
-                <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="49,10,0,0" Height="24" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="3" Grid.Row="3" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBox ItemsSource="{Binding}" SelectedValue="{Binding Color}" Margin="50,10,0,1" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="155" Grid.ColumnSpan="3" Grid.Row="3" SelectionChanged="ComboBox_SelectionChanged">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -62,17 +62,19 @@
             </Grid>
             <Grid Grid.Column="2" Grid.Row="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="42*"/>
+                    <RowDefinition Height="169*"/>
+                    <RowDefinition Height="39*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,5" Click="stockButton_Click"/>
-                <ListBox x:Name="stockList" Grid.Row="1" Margin="10"/>
+                <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="70,7" Click="stockButton_Click" />
+                <Button x:Name="deleteButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="70,7" Click="deleteButton_Click"/>
+                <ListBox x:Name="stockList" Grid.Row="1" Margin="10" Grid.RowSpan="2"/>
 
             </Grid>
         </Grid>
-        
+
     </StackPanel>
 </Window>
