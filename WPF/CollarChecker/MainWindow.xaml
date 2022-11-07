@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="700" FontSize="15" FontFamily="Segoe UI Light" Loaded="Window_Loaded">
 
-    <StackPanel>
+    <StackPanel Margin="0,0,0,-21" Height="290" VerticalAlignment="Top">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -69,8 +69,8 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="70,7" Click="stockButton_Click" />
-                <Button x:Name="deleteButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="70,7" Click="deleteButton_Click"/>
+                <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,10,130,4" Click="stockButton_Click" RenderTransformOrigin="-0.319,0.556" />
+                <Button x:Name="deleteButton"  Content="DELETE" FontSize="20" Margin="127,10,13,4" Click="deleteButton_Click"/>
                 <ListBox x:Name="stockList" Grid.Row="1" Margin="10" Grid.RowSpan="2"/>
 
             </Grid>

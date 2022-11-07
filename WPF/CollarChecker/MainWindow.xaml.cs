@@ -20,7 +20,7 @@ namespace CollarChecker {
     /// </summary>
     public partial class MainWindow : Window {
 
-        MyColor myColor = new MyColor();
+        List<MyColor> listmyColor = new List<MyColor>();
 
         //コンストラクタ
         public MainWindow() {
@@ -72,7 +72,7 @@ namespace CollarChecker {
         }
 
         private void stockButton_Click(object sender, RoutedEventArgs e) {
-
+            stockList.Items.Add("R:" + rValue.Text + "G:" + gValue.Text + "B:"+ bValue.Text);
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e) {
