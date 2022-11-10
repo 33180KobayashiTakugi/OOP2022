@@ -71,7 +71,7 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="stockButton" Grid.Row="0"  Content="STOCK" FontSize="20" Margin="10,10,130,4" Click="stockButton_Click" RenderTransformOrigin="-0.319,0.556" />
                 <Button x:Name="deleteButton"  Content="DELETE" FontSize="20" Margin="127,10,13,4" Click="deleteButton_Click"/>
-                <ListBox x:Name="stockList" Grid.Row="1" Margin="10" Grid.RowSpan="2"/>
+                <ListBox x:Name="stockList" Grid.Row="1" Margin="10" Grid.RowSpan="2" SelectionChanged="stockList_SelectionChanged"/>
 
             </Grid>
         </Grid>
