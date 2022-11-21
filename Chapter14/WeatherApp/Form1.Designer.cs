@@ -24,13 +24,21 @@ namespace WeatherApp {
         /// コード エディターで変更しないでください。
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbWeatherinfo = new System.Windows.Forms.TextBox();
             this.btWeatherGet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbRegion = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pbImage = new System.Windows.Forms.PictureBox();
+            this.btExit = new System.Windows.Forms.Button();
+            this.pbImage2 = new System.Windows.Forms.PictureBox();
+            this.pbImage3 = new System.Windows.Forms.PictureBox();
+            this.pbImage4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage4)).BeginInit();
             this.SuspendLayout();
             // 
             // tbWeatherinfo
@@ -61,13 +69,13 @@ namespace WeatherApp {
             this.label1.TabIndex = 2;
             this.label1.Text = "天気概況";
             // 
-            // comboBox1
+            // cbRegion
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 20);
-            this.comboBox1.TabIndex = 3;
+            this.cbRegion.FormattingEnabled = true;
+            this.cbRegion.Location = new System.Drawing.Point(138, 71);
+            this.cbRegion.Name = "cbRegion";
+            this.cbRegion.Size = new System.Drawing.Size(148, 20);
+            this.cbRegion.TabIndex = 3;
             // 
             // label2
             // 
@@ -88,20 +96,65 @@ namespace WeatherApp {
             this.pbImage.TabIndex = 5;
             this.pbImage.TabStop = false;
             // 
+            // btExit
+            // 
+            this.btExit.Location = new System.Drawing.Point(693, 589);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(75, 23);
+            this.btExit.TabIndex = 6;
+            this.btExit.Text = "終了";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            // 
+            // pbImage2
+            // 
+            this.pbImage2.BackColor = System.Drawing.SystemColors.Control;
+            this.pbImage2.Location = new System.Drawing.Point(190, 336);
+            this.pbImage2.Name = "pbImage2";
+            this.pbImage2.Size = new System.Drawing.Size(96, 61);
+            this.pbImage2.TabIndex = 5;
+            this.pbImage2.TabStop = false;
+            // 
+            // pbImage3
+            // 
+            this.pbImage3.BackColor = System.Drawing.SystemColors.Control;
+            this.pbImage3.Location = new System.Drawing.Point(190, 415);
+            this.pbImage3.Name = "pbImage3";
+            this.pbImage3.Size = new System.Drawing.Size(96, 61);
+            this.pbImage3.TabIndex = 5;
+            this.pbImage3.TabStop = false;
+            // 
+            // pbImage4
+            // 
+            this.pbImage4.BackColor = System.Drawing.SystemColors.Control;
+            this.pbImage4.Location = new System.Drawing.Point(190, 497);
+            this.pbImage4.Name = "pbImage4";
+            this.pbImage4.Size = new System.Drawing.Size(96, 61);
+            this.pbImage4.TabIndex = 5;
+            this.pbImage4.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 683);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(800, 624);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.pbImage4);
+            this.Controls.Add(this.pbImage3);
+            this.Controls.Add(this.pbImage2);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbRegion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btWeatherGet);
             this.Controls.Add(this.tbWeatherinfo);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,9 +165,13 @@ namespace WeatherApp {
         private System.Windows.Forms.TextBox tbWeatherinfo;
         private System.Windows.Forms.Button btWeatherGet;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbRegion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.PictureBox pbImage2;
+        private System.Windows.Forms.PictureBox pbImage3;
+        private System.Windows.Forms.PictureBox pbImage4;
     }
 }
 

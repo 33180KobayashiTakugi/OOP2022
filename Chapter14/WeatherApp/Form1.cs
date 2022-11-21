@@ -14,6 +14,15 @@ namespace WeatherApp {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
+            RegionCode();
+        }
+
+        public void RegionCode() {
+            List<string> codes = new List<string> { "北海道地方" ,"東北地方","関東甲信地方","東海地方","北陸地方","近畿地方",
+                                                    "中国地方","四国地方","九州北部地方","九州南部・奄美地方","沖縄地方"};
+            cbRegion.Items.AddRange(codes.ToArray());
+            
+            
         }
 
         private void btWeatherGet_Click(object sender, EventArgs e) {
@@ -33,5 +42,10 @@ namespace WeatherApp {
 
 
         }
+
+        private void btExit_Click(object sender, EventArgs e) {
+            Application.Exit();
+        }
+
     }
 }
