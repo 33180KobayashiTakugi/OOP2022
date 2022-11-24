@@ -27,9 +27,6 @@ namespace WeatherApp {
 
 
 
-
-
-
         private void btWeatherGet_Click(object sender, EventArgs e) {
 
             try {
